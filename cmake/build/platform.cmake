@@ -1,0 +1,11 @@
+if(UNIX AND APPLE)
+    set(PLATFORM "osx" )
+elseif(UNIX)
+    set(PLATFORM "linux")
+else()
+    set(PLATFORM "win32")
+endif()
+
+message(STATUS "CXX COMPILER: \t\t\t\t ${CMAKE_CXX_COMPILER_ID} ${CMAKE_CXX_COMPILER_VERSION}")
+message(STATUS "CXX PLATFORM: \t\t\t\t ${CMAKE_CXX_PLATFORM_ID}")
+message(STATUS "RUNNING ON:   \t\t\t\t ${CMAKE_SYSTEM}")
