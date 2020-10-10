@@ -2,7 +2,7 @@
 #include <vector>
 #include <Engine/Sprite.h>
 #include "gamestate.h"
-#include "game/gameobjects/blocks/gameobject.h"
+#include "game/gameobjects/gameobject.h"
 
 class StartUp : public GameState
 {
@@ -11,7 +11,6 @@ public:
 
     void init(ASGE::Renderer* renderer) override;
     void update(float delta_time) override {};
-    //void render(ASGE::Renderer* renderer) override {};
 
 private:
     void initCamera();

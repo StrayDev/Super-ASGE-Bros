@@ -2,7 +2,7 @@
 #include <vector>
 #include <Engine/Sprite.h>
 #include "gamestate.h"
-#include "game/gameobjects/blocks/gameobject.h"
+#include "game/gameobjects/gameobject.h"
 
 class Menu : public GameState
 {

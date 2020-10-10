@@ -4,7 +4,7 @@
 void StartUp::init(ASGE::Renderer *renderer)
 {
     renderer->setClearColour(ASGE::COLOURS::LIGHTBLUE);
-    renderer->setWindowedMode(ASGE::GameSettings::WindowMode::BORDERLESS_FULLSCREEN);
+    //renderer->setWindowedMode(ASGE::GameSettings::WindowMode::BORDERLESS_FULLSCREEN);
 
     initCamera();
     _game->setState(new Menu(_game));

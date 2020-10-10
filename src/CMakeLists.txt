@@ -13,7 +13,26 @@ add_executable(
         ${GAME} ${HEADER_LIST}
         ## source code files for app here ##
         game/core/main.cpp
-        game/core/game.cpp game/core/input.cpp game/core/input.h game/gamestates/gamestate.cpp game/gamestates/gamestate.h game/gamestates/menu.cpp game/gamestates/menu.h game/gamestates/startup.cpp game/gamestates/startup.h game/gamestates/playing.cpp game/gamestates/playing.h game/levels/grid.cpp game/levels/grid.h game/levels/leveldata.cpp game/levels/leveldata.h game/math/vector2.cpp game/math/vector2.h game/gameobjects/blocks/gameobject.cpp game/gameobjects/blocks/gameobject.h game/gameobjects/blocks/block.cpp game/gameobjects/blocks/block.h game/gameobjects/blocks/tile.cpp game/gameobjects/blocks/tile.h game/gameobjects/blocks/titlecard.cpp game/gameobjects/blocks/titlecard.h game/gameobjects/entities/entity.cpp game/gameobjects/entities/entity.h game/gameobjects/entities/entitystate.cpp game/gameobjects/entities/entitystate.h game/gameobjects/entities/player/mario.cpp game/gameobjects/entities/player/mario.h game/gameobjects/entities/player/playeridle.cpp game/gameobjects/entities/player/playeridle.h)
+        game/core/game.cpp game/core/input.cpp
+        game/core/input.h game/gamestates/gamestate.cpp
+        game/components/component.cpp
+        game/components/component.h
+        game/gameobjects/gameobject.cpp
+        game/gameobjects/gameobject.h
+        game/gamestates/gamestate.h
+        game/gamestates/menu.cpp
+        game/gamestates/menu.h
+        game/gamestates/startup.cpp
+        game/gamestates/startup.h
+        game/gamestates/playing.cpp
+        game/gamestates/playing.h
+        game/levels/grid.cpp
+        game/levels/grid.h
+        game/levels/leveldata.cpp
+        game/levels/leveldata.h
+        game/math/vector2.cpp
+        game/math/vector2.h
+        game/components/transform.cpp game/components/transform.h game/core/gamedata.cpp game/core/gamedata.h game/components/Renderer.cpp game/components/Renderer.h game/components/spriterenderer.cpp game/components/spriterenderer.h)
 
 ## configure the target ##
 configure_target(${GAME} ${CMAKE_CURRENT_SOURCE_DIR} "${HEADER_LIST}")
