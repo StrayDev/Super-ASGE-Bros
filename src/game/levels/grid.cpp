@@ -2,14 +2,14 @@
 
 Grid::Grid(Vector2 gridSize, float cellSize)
 {
-    _gridSize = gridSize;
-    _cellSize = cellSize;
+    grid_size = gridSize;
+    cell_size = cellSize;
 
-    for (int y = 0; y < (int)_gridSize.y(); y++)
+    for (int y = 0; y < (int)gridSize.y(); y++)
     {
-        for (int x = 0; x < (int)_gridSize.x(); x++)
+        for (int x = 0; x < (int)gridSize.x(); x++)
         {
-            auto position = Vector2((float)x * _cellSize, (float)y * _cellSize);
+            auto position = Vector2((float)x * cellSize, (float)y * cellSize);
             _cells.push_back(position);
         }
     }

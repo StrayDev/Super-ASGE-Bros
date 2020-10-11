@@ -9,13 +9,14 @@ public:
     Grid(Vector2 gridSize, float cellSize);
     ~Grid() = default;
 
-    std::vector<Vector2> Cells() { return _cells; }
+    std::vector<Vector2> allCells() { return _cells; }
     Vector2 getCell(int i) { return _cells[i]; }
-    float cellSize() const { return _cellSize; }
+    float getCellSize() const { return cell_size; }
+    Vector2 getGridSize() const { return grid_size; }
 
 private:
-    Vector2 _gridSize;
-    float _cellSize;
+    Vector2 grid_size;
+    float cell_size;
     std::vector<Vector2> _cells;
 };
 

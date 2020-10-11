@@ -5,11 +5,8 @@
 
 void GameState::render(ASGE::Renderer* renderer)
 {
-
-    Logging::log(std::to_string(Renderer::getRenderComponents().size()));
-
     for(auto r : Renderer::getRenderComponents())
     {
-
+        r->render(renderer);
     }
 }

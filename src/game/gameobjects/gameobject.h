@@ -15,7 +15,20 @@ public:
 
     const std::string name = "GameObject";
 
-    void addComponent(Component* _component) { components.push_back(_component); }
+    void addComponent(Component* _component);
+
+    template <typename T> //need to figure out how to put this in its own header .tpp i think?
+    T getComponent()
+    {
+        for(auto c : components)
+        {
+            if (dynamic_cast<T>(c))
+            {
+                return reinterpret_cast<T>(c);
+            }
+        }
+        return nullptr;
+    }
 
 protected:
     std::vector<Component*> components;

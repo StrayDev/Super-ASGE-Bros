@@ -4,11 +4,13 @@
 class Transform : public Component
 {
 public:
-    explicit Transform(GameObject* _gameobject) : Component(_gameobject) {};
+    Transform() = default;
     ~Transform() override = default;
 
+    void init(GameObject *_gameobject) override;
+
     Vector2 getPosition() { return position; }
-    void setPosition(Vector2 pos) { position = pos; }
+    void setPosition(Vector2 pos);
     void setPosition(float _x, float _y) { setPosition(Vector2(_x, _y)); }
 
 private:

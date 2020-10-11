@@ -4,14 +4,18 @@
 class SpriteRenderer : public Renderer
 {
 public:
-    explicit SpriteRenderer(GameObject* _gameobject);
+    SpriteRenderer() = default;
     ~SpriteRenderer() override = default;
 
     void init(GameObject *_gameobject) override;
     void render(ASGE::Renderer *renderer) override;
 
     void createSprite(ASGE::Renderer* renderer, std::string file_path);
-    void debug_SetSPriteScale(int i) { sprite->scale(i); }
+    void setSpriteSize(Vector2 size) { sprite->width(size.x()); sprite->height(size.y()); }
+    void setSpritePosition(Vector2 pos) { sprite->xPos(pos.x()); sprite->yPos(pos.y()); }
+
+    void debug_SetSpriteScale(float i) { sprite->scale(i); } ///change to set sprite dimentions
+
 
 private:
     ASGE::Sprite* sprite = nullptr;

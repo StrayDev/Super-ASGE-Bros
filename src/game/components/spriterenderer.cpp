@@ -4,12 +4,11 @@
 void SpriteRenderer::init(GameObject *_gameobject)
 {
     Renderer::init(_gameobject);
-    ///working but code is a mess - git before you dp anything else
 }
 
 void SpriteRenderer::render(ASGE::Renderer *renderer)
 {
-    Logging::log("rendered");
+    renderer->renderSprite(*sprite);
 }
 
 void SpriteRenderer::createSprite(ASGE::Renderer* renderer, std::string file_path)
@@ -23,9 +22,6 @@ void SpriteRenderer::createSprite(ASGE::Renderer* renderer, std::string file_pat
 
 }
 
-SpriteRenderer::SpriteRenderer(GameObject* _gameobject) : Renderer(_gameobject)
-{
-    init(_gameobject);
-}
+
 
 

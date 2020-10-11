@@ -3,5 +3,13 @@
 
 GameObject::GameObject()
 {
-    components.push_back(new Transform(this));
+    addComponent(new Transform);
 }
+
+void GameObject::addComponent(Component *_component)
+{
+    _component->init(this);
+    components.push_back(_component);
+}
+
+

@@ -4,7 +4,7 @@
 class Renderer : public Component
 {
 public:
-    explicit Renderer(GameObject* _gameobject) : Component(_gameobject) {}
+    explicit Renderer() = default;
     ~Renderer() override = default;
 
     void init(GameObject *_gameobject) override;
