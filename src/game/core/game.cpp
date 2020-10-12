@@ -51,7 +51,7 @@ void ASGEGame::update(const ASGE::GameTime& game_time)
     _gameState->update(delta_time);
 }
 
-///Renderer
+///rendercomponent
 void ASGEGame::render()
 {
     renderer->setProjectionMatrix(_camera.getView());

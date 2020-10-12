@@ -14,6 +14,8 @@ public:
     float x() { return _x; }
     float y() { return _y; }
 
+    static float distance(Vector2 pos1, Vector2 pos2);
+
 private:
     float _x = 0;
     float _y = 0;

@@ -1,7 +1,7 @@
 #pragma once
-#include "Renderer.h"
+#include "RenderComponent.h"
 
-class SpriteRenderer : public Renderer
+class SpriteRenderer : public RenderComponent
 {
 public:
     SpriteRenderer() = default;

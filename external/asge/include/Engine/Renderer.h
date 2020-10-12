@@ -1,6 +1,6 @@
 /** 
  * @file
- * @brief Class @ref ASGE::Renderer
+ * @brief Class @ref ASGE::rendercomponent
  */
 
 #pragma once

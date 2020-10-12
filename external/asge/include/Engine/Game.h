@@ -139,7 +139,7 @@ namespace ASGE {
 		*/
 		void initFileIO();
 
-		std::unique_ptr<Renderer> renderer; /**< Unique pointer to the Renderer subsystem.
+		std::unique_ptr<Renderer> renderer; /**< Unique pointer to the rendercomponent subsystem.
 											     A smart pointer managing the renderer. 
 											     Use renderer.get() to retrieve the raw pointer. */
 

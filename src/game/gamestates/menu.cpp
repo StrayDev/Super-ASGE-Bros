@@ -2,7 +2,7 @@
 #include <game/core/savesystem.h>
 #include "menu.h"
 #include "playing.h"
-#include "game/components/Renderer.h"
+#include "game/components/RenderComponent.h"
 
 Menu::~Menu()
 {

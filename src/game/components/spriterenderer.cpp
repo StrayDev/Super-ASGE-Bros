@@ -3,7 +3,7 @@
 
 void SpriteRenderer::init(GameObject *_gameobject)
 {
-    Renderer::init(_gameobject);
+    RenderComponent::init(_gameobject);
 }
 
 void SpriteRenderer::render(ASGE::Renderer *renderer)

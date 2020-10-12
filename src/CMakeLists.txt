@@ -32,7 +32,7 @@ add_executable(
         game/levels/leveldata.h
         game/math/vector2.cpp
         game/math/vector2.h
-        game/components/transform.cpp game/components/transform.h game/core/gamedata.cpp game/core/gamedata.h game/components/Renderer.cpp game/components/Renderer.h game/components/spriterenderer.cpp game/components/spriterenderer.h game/core/savesystem.cpp game/core/savesystem.h)
+        game/components/transform.cpp game/components/transform.h game/core/gamedata.cpp game/core/gamedata.h game/components/RenderComponent.cpp game/components/RenderComponent.h game/components/spriterenderer.cpp game/components/spriterenderer.h game/core/savesystem.cpp game/core/savesystem.h game/levels/cell.cpp game/levels/cell.h)
 
 ## configure the target ##
 configure_target(${GAME} ${CMAKE_CURRENT_SOURCE_DIR} "${HEADER_LIST}")

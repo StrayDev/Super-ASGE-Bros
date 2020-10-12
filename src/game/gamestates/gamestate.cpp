@@ -5,7 +5,7 @@
 
 void GameState::render(ASGE::Renderer* renderer)
 {
-    for(auto r : Renderer::getRenderComponents())
+    for(auto r : RenderComponent::getRenderComponents())
     {
         r->render(renderer);
     }
