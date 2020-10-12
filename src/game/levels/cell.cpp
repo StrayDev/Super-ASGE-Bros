@@ -1,11 +1,4 @@
 #include "cell.h"
-#include <game/components/transform.h>
-
-
-Cell::Cell(Vector2 pos)
-{
-    position = pos;
-}
 
 void Cell::assignToCell(int id, GameObject* obj)
 {
@@ -13,6 +6,7 @@ void Cell::assignToCell(int id, GameObject* obj)
     delete gameobject;
     gameobject = obj;
     gameobject->getComponent<Transform*>()->setPosition(position);
+    gameobject->getComponent<SpriteRenderer*>()->setSpriteSize(Vector2(cell_size,cell_size));
 }
 
 GameObject* Cell::getGameObject()

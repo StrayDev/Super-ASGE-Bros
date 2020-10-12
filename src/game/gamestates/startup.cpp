@@ -1,10 +1,15 @@
 #include "startup.h"
 #include "menu.h"
+#include "game/objectfactories/factory.h"
+
+ASGE::Renderer* Factory::renderer;
 
 void StartUp::init(ASGE::Renderer *renderer)
 {
     renderer->setClearColour(ASGE::COLOURS::LIGHTBLUE);
     //renderer->setWindowedMode(ASGE::GameSettings::WindowMode::BORDERLESS_FULLSCREEN);
+
+    Factory::setRendererPtr(renderer);
 
     initCamera();
     _game->setState(new Menu(_game));

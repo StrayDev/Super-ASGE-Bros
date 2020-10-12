@@ -1,7 +1,6 @@
 #include "Engine/Logger.hpp"
 #include "filesystem.h"
 
-
 void FileSystem::loadLevel(const std::string& level_id, ASGE::Renderer* renderer)
 {
     auto file = new std::ifstream();
@@ -65,19 +64,9 @@ void FileSystem::loadBlocks(std::ifstream* file, Grid* grid, ASGE::Renderer* ren
                 continue;
             }
 
-            //auto block = BlockFactory::creatBlock(block_id, "filepath to sprite atlas");
-
-            auto gameobject = new GameObject();
+            auto block = BlockFactory::createBlock(i);
             auto cell_position = Vector2(x * grid->getCellSize(), y * grid->getCellSize() );
-            auto cell = grid->getCell(cell_position);
-            auto sprite = new SpriteRenderer();
-            auto dimensions = grid->getCellSize();
-
-            sprite->createSprite(renderer, "data/tileset/ground.png");
-            sprite->setSpriteSize(Vector2(dimensions, dimensions));
-            gameobject->addComponent(sprite);
-
-            cell->assignToCell(i, gameobject);
+            grid->getCell(cell_position)->assignToCell(i, block);
         }
         *file >> std::ws;
     }

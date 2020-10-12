@@ -7,7 +7,7 @@ class Grid
 {
 public:
     Grid() = default;
-    Grid(Vector2 gridSize, float cellSize);
+    Grid(Vector2 _gridsize, float _cellsize);
     ~Grid() = default;
 
     std::vector<Cell*> allCells() { return _cells; }

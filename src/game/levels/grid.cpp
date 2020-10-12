@@ -1,16 +1,16 @@
 #include "grid.h"
 
-Grid::Grid(Vector2 gridSize, float cellSize)
+Grid::Grid(Vector2 _gridsize, float _cellsize)
 {
-    grid_size = gridSize;
-    cell_size = cellSize;
+    grid_size = _gridsize;
+    cell_size = _cellsize;
 
-    for (int y = 0; y < (int)gridSize.y(); y++)
+    for (int y = 0; y < (int)_gridsize.y(); y++)
     {
-        for (int x = 0; x < (int)gridSize.x(); x++)
+        for (int x = 0; x < (int)_gridsize.x(); x++)
         {
-            auto position = Vector2((float)x * cellSize, (float)y * cellSize);
-            _cells.push_back(new Cell(position));
+            auto position = Vector2((float)x * _cellsize, (float)y * _cellsize);
+            _cells.push_back(new Cell(cell_size, position));
 
         }
     }
