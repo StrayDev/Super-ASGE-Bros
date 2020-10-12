@@ -3,10 +3,10 @@
 #include "component.h"
 #include "Engine/Logger.hpp"
 
-std::vector<Component*> all;
+std::vector<Component*> Component::all_components;
 
 void Component::init(GameObject* _gameobject)
 {
     gameobject = _gameobject;
-    all.push_back(this);
+    all_components.push_back(this);
 }
