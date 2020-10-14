@@ -13,6 +13,7 @@ public:
     void createSprite(ASGE::Renderer* renderer, std::string file_path);
     void setSpriteSize(Vector2 size) { sprite->width(size.x()); sprite->height(size.y()); }
     void setSpritePosition(Vector2 pos) { sprite->xPos(pos.x()); sprite->yPos(pos.y()); }
+    void setAtlasCoordinates(int x, int y, int width, int height);
 
     void debug_SetSpriteScale(float i) { sprite->scale(i); } ///change to set sprite dimentions
 

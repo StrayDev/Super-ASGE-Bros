@@ -1,6 +1,11 @@
 #include "Engine/Logger.hpp"
 #include "filesystem.h"
 
+void FileSystem::loadFont(std::string file_path)
+{
+
+}
+
 void FileSystem::loadLevel(const std::string& level_id, ASGE::Renderer* renderer)
 {
     auto file = new std::ifstream();
@@ -18,13 +23,15 @@ void FileSystem::loadLevel(const std::string& level_id, ASGE::Renderer* renderer
     std::string line;
     std::getline( *file, line, ':');
 
-
     auto grid = loadGrid(file);
     loadBlocks(file, grid, renderer);
     /// loadEntities - player, enemies, warp pipes and load zones
 
     file->close();
     delete file;
+
+    if (level_id != "menu") return;
+    BlockFactory::createTitleCard();
 }
 
 Grid* FileSystem::loadGrid(std::ifstream* file)
@@ -71,3 +78,5 @@ void FileSystem::loadBlocks(std::ifstream* file, Grid* grid, ASGE::Renderer* ren
         *file >> std::ws;
     }
 }
+
+

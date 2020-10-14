@@ -5,6 +5,7 @@
 class BlockFactory : public Factory
 {
 public:
+    static void createTitleCard();
     static GameObject* createBlock(int i);
 
 private:

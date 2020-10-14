@@ -5,14 +5,61 @@ GameObject *BlockFactory::createBlock(int i)
 {
     auto obj = new GameObject();
     auto sprite = new SpriteRenderer();
-    sprite->createSprite(renderer, "data/sprites/ground.png"); ///needs to be block atlas
+    sprite->createSprite(renderer, "data/sprites/atlas11.png");
     obj->addComponent(sprite);
+
+    auto block_size = 64;
 
     switch (i)
     {
-        case 1: /// ground block
+        case 1: // ground
         {
-
+            sprite->setAtlasCoordinates(0, 0, block_size, block_size);
+            return obj;
+        }
+        case 2: //brick-top
+        {
+            sprite->setAtlasCoordinates(block_size, 0, block_size, block_size);
+            return obj;
+        }
+        case 9:
+        {
+            sprite->setAtlasCoordinates(0, block_size, block_size, block_size);
+            return obj;
+        }
+        case 10:
+        {
+            sprite->setAtlasCoordinates(block_size, block_size, block_size, block_size);
+            return obj;
+        }
+        case 18:
+        {
+            sprite->setAtlasCoordinates( 0, block_size*2, block_size, block_size);
+            return obj;
+        }
+        case 19:
+        {
+            sprite->setAtlasCoordinates( block_size, block_size*2, block_size, block_size);
+            return obj;
+        }
+        case 20:
+        {
+            sprite->setAtlasCoordinates( block_size*2, block_size*2, block_size, block_size);
+            return obj;
+        }
+        case 26:
+        {
+            sprite->setAtlasCoordinates( 0, block_size*3, block_size, block_size);
+            return obj;
+        }
+        case 27:
+        {
+            sprite->setAtlasCoordinates( block_size, block_size*3, block_size, block_size);
+            return obj;
+        }
+        case 28:
+        {
+            sprite->setAtlasCoordinates( block_size*2, block_size*3, block_size, block_size);
             return obj;
         }
         default:
@@ -21,4 +68,17 @@ GameObject *BlockFactory::createBlock(int i)
             return nullptr;
         }
     }
+}
+
+void BlockFactory::createTitleCard()
+{
+    auto obj = new GameObject();
+    auto sprite = new SpriteRenderer();
+    obj->addComponent(sprite);
+    sprite->createSprite(renderer, "data/sprites/asgebros.png");
+    sprite->setSpriteSize(Vector2(640*1.5, 352*1.5));
+    sprite->setSpritePosition(Vector2(540, 85));
+
+    Logging::log(std::to_string(160*4));
+    Logging::log(std::to_string(16*22));
 }

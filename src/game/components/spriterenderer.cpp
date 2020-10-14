@@ -15,11 +15,15 @@ void SpriteRenderer::createSprite(ASGE::Renderer* renderer, std::string file_pat
 {
     delete sprite;
     sprite = renderer->createRawSprite();
-    if (sprite->loadTexture(file_path)) Logging::log(file_path + " loaded\n");
+    if (!sprite->loadTexture(file_path)) Logging::log(file_path + " not loaded\n");
+}
 
-
-    ///set size from transform
-
+void SpriteRenderer::setAtlasCoordinates(int x, int y, int width, int height)
+{
+    sprite->srcRect()[0] = x;
+    sprite->srcRect()[1] = y;
+    sprite->srcRect()[2] = width;
+    sprite->srcRect()[3] = height;
 }
 
 
