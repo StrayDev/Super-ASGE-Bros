@@ -3,6 +3,9 @@
 #include <Engine/Sprite.h>
 #include "gamestate.h"
 #include "game/gameobjects/gameobject.h"
+#include "game/objectfactories/factory.h"
+#include "game/components/textrenderer.h"
+
 
 class StartUp : public GameState
 {

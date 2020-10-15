@@ -1,6 +1,6 @@
 #include "startup.h"
 #include "menu.h"
-#include "game/objectfactories/factory.h"
+#include <Engine/Logger.hpp>
 
 ASGE::Renderer* Factory::renderer;
 
@@ -9,10 +9,17 @@ void StartUp::init(ASGE::Renderer *renderer)
     renderer->setClearColour(ASGE::COLOURS::LIGHTBLUE);
     //renderer->setWindowedMode(ASGE::GameSettings::WindowMode::BORDERLESS_FULLSCREEN);
 
-    Factory::setRendererPtr(renderer);
+    TextRenderer::loadFont(renderer);
+    Factory::setRendererPtr(renderer); // not sure if this is frowned upon
 
     initCamera();
     _game->setState(new Menu(_game));
+
+    //////////////////////////// temp
+    auto g = new GameObject();
+    auto t = new TextRenderer();
+    g->addComponent(t);
+    t->createText(renderer, "MARIO\n000000", 1);
 }
 
 void StartUp::initCamera()

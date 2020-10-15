@@ -1,7 +1,4 @@
-#include <string>
-#include <Engine/Logger.hpp>
-#include <game/gamestates/startup.h>
-#include "game.h"
+#include "game/gamestates/startup.h"
 
 ///Constructor.
 ASGEGame::ASGEGame(ASGE::GameSettings settings) : OGLGame(settings)
@@ -17,7 +14,7 @@ ASGEGame::ASGEGame(ASGE::GameSettings settings) : OGLGame(settings)
 ASGEGame::~ASGEGame()
 {
     delete _input;
-    delete _gameState;
+    delete _gameState; // do i need this vs should i have it
     inputs->unregisterCallback(static_cast<unsigned int>(key_callback_id));
     inputs->unregisterCallback(static_cast<unsigned int>(mouse_callback_id));
 }

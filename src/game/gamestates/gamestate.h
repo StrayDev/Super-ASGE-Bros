@@ -1,7 +1,7 @@
 #pragma once
 #include <string>
-#include <game/gameobjects/gameobject.h>
-#include <game/levels/grid.h>
+#include "game/gameobjects/gameobject.h"
+#include "game/levels/grid.h"
 #include "game/core/game.h"
 
 class GameState
@@ -17,7 +17,7 @@ public:
 
 protected:
     ASGEGame* _game = nullptr;
-    Grid* _grid = nullptr;
+    Grid* _grid = nullptr; //??? this is being bypassed
 
 
 };

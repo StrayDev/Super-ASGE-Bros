@@ -10,7 +10,7 @@
 class FileSystem
 {
 public:
-    static void loadFont(std::string file_path);
+    static void loadFont(ASGE::Renderer* renderer, std::string file_path);
     static void loadLevel(const std::string& level_id, ASGE::Renderer* renderer);
 
 private:

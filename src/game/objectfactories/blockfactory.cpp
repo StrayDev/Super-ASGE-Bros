@@ -78,7 +78,4 @@ void BlockFactory::createTitleCard()
     sprite->createSprite(renderer, "data/sprites/asgebros.png");
     sprite->setSpriteSize(Vector2(640*1.5, 352*1.5));
     sprite->setSpritePosition(Vector2(540, 85));
-
-    Logging::log(std::to_string(160*4));
-    Logging::log(std::to_string(16*22));
 }

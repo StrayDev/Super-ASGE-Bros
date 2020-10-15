@@ -2,6 +2,7 @@
 #include <Engine/Camera2D.hpp>
 #include <Engine/OGLGame.h>
 #include <string>
+
 #include "input.h"
 
 class GameState;
@@ -29,5 +30,4 @@ private:
     ASGE::Camera2D _camera;
     Input* _input = nullptr;
     GameState* _gameState = nullptr;
-
 };

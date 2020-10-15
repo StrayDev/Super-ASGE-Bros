@@ -1,5 +1,4 @@
 #include "rendercomponent.h"
-#include "Engine/Logger.hpp"
 
 std::vector<RenderComponent*> RenderComponent::render_components;
 

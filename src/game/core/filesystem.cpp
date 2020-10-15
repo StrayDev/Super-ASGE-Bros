@@ -1,10 +1,6 @@
 #include "Engine/Logger.hpp"
+#include "Engine/FileIO.h"
 #include "filesystem.h"
-
-void FileSystem::loadFont(std::string file_path)
-{
-
-}
 
 void FileSystem::loadLevel(const std::string& level_id, ASGE::Renderer* renderer)
 {
@@ -29,9 +25,6 @@ void FileSystem::loadLevel(const std::string& level_id, ASGE::Renderer* renderer
 
     file->close();
     delete file;
-
-    if (level_id != "menu") return;
-    BlockFactory::createTitleCard();
 }
 
 Grid* FileSystem::loadGrid(std::ifstream* file)
@@ -58,6 +51,7 @@ void FileSystem::loadBlocks(std::ifstream* file, Grid* grid, ASGE::Renderer* ren
     for(int y = 0; y < grid->getGridSize().y(); y++)
     {
         std::getline( *file, line, ':');
+        Logging::log("\n");
 
         for(int x = 0; x < grid->getGridSize().x(); x++)
         {
