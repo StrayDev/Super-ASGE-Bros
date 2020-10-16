@@ -5,7 +5,7 @@
 #include "game/levels/grid.h"
 #include "game/gameobjects/gameobject.h"
 #include "game/components/spriterenderer.h"
-#include <game/objectfactories/blockfactory.h>
+#include <game/factories/blockfactory.h>
 
 class FileSystem
 {

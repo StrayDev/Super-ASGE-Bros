@@ -37,6 +37,13 @@ void TextRenderer::createText(ASGE::Renderer *renderer, std::string string, floa
 {
     text = new ASGE::Text(renderer->getFont(font_index), string);
     text->setScale(scale);
+    text->setZOrder(10);
+}
+
+void TextRenderer::setTextPosition(Vector2 position)
+{
+    text->setPositionX(position.x());
+    text->setPositionY(position.y());
 }
 
 

@@ -71,6 +71,7 @@ void FileSystem::loadBlocks(std::ifstream* file, Grid* grid, ASGE::Renderer* ren
         }
         *file >> std::ws;
     }
+    Logging::log("\n");
 }
 
 

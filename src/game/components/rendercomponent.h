@@ -5,7 +5,7 @@ class RenderComponent : public Component
 {
 public:
     explicit RenderComponent() = default;
-    ~RenderComponent() override = default;
+    virtual ~RenderComponent();
 
     void init(GameObject *_gameobject) override;
     virtual void render(ASGE::Renderer* renderer) = 0;

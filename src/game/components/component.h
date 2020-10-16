@@ -7,11 +7,11 @@ class Component
 {
 public:
     Component() = default;
-    virtual ~Component() = default;
+    virtual ~Component();
 
     virtual void init(GameObject* _gameobject);
 
-    ///get all components
+    static std::vector<Component*> getAllComponents() { return all_components; }
 
 protected:
     GameObject* gameobject = nullptr;

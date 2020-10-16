@@ -32,6 +32,11 @@ GameObject *BlockFactory::createBlock(int i)
             sprite->setAtlasCoordinates(block_size, block_size, block_size, block_size);
             return obj;
         }
+        case 11: // mario
+        {
+            sprite->setAtlasCoordinates(block_size*8, 0, block_size, block_size);
+            return obj;
+        }
         case 18:
         {
             sprite->setAtlasCoordinates( 0, block_size*2, block_size, block_size);

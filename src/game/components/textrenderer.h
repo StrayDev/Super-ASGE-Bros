@@ -12,6 +12,9 @@ public:
     void render(ASGE::Renderer *renderer) override;
 
     void createText(ASGE::Renderer* renderer, std::string string, float scale);
+    void setTextPosition(Vector2 position);
+
+    float getWidthOffset() { return text->getWidth()/2; }
 
     static void loadFont(ASGE::Renderer* renderer);
 

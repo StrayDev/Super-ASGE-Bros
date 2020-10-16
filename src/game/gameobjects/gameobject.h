@@ -11,9 +11,7 @@ class GameObject
 {
 public:
     GameObject();
-    ~GameObject() = default;
-
-    const std::string name = "GameObject";
+    ~GameObject();
 
     void addComponent(Component* _component);
 
@@ -30,8 +28,14 @@ public:
         return nullptr;
     }
 
+    static std::vector<GameObject*> getAllObjects() { return all_objects; }
+    static void destroyAllObjects();
+    static void destroyNonPersistentObjects();
+
 protected:
     std::vector<Component*> components;
+
+    static std::vector<GameObject*> all_objects;
 
 };
 

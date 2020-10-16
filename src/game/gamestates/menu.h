@@ -12,9 +12,10 @@ public:
 
     void init(ASGE::Renderer* renderer) override;
     void update(float delta_time) override;
-    //void render(ASGE::rendercomponent* renderer) override;
 
 private:
+    void createMenuText(ASGE::Renderer* renderer);
+
     GameObject* selection_icon = nullptr;
 };
 

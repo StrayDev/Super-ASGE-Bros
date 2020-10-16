@@ -14,12 +14,6 @@ void StartUp::init(ASGE::Renderer *renderer)
 
     initCamera();
     _game->setState(new Menu(_game));
-
-    //////////////////////////// temp
-    auto g = new GameObject();
-    auto t = new TextRenderer();
-    g->addComponent(t);
-    t->createText(renderer, "MARIO\n000000", 1);
 }
 
 void StartUp::initCamera()
