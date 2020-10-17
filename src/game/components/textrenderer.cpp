@@ -33,11 +33,12 @@ void TextRenderer::loadFont(ASGE::Renderer* renderer)
     }
 }
 
-void TextRenderer::createText(ASGE::Renderer *renderer, std::string string, float scale)
+void TextRenderer::createText(ASGE::Renderer *renderer, std::string string, float scale, ASGE::Colour colour)
 {
     text = new ASGE::Text(renderer->getFont(font_index), string);
     text->setScale(scale);
     text->setZOrder(10);
+    text->setColour(colour);
 }
 
 void TextRenderer::setTextPosition(Vector2 position)

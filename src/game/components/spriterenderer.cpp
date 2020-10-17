@@ -8,6 +8,7 @@ void SpriteRenderer::init(GameObject *_gameobject)
 
 void SpriteRenderer::render(ASGE::Renderer *renderer)
 {
+    if(!sprite) return;
     renderer->renderSprite(*sprite);
 }
 

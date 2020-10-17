@@ -31,11 +31,11 @@ public:
     static std::vector<GameObject*> getAllObjects() { return all_objects; }
     static void destroyAllObjects();
     static void destroyNonPersistentObjects();
+    static std::vector<GameObject*> all_objects;
 
 protected:
     std::vector<Component*> components;
 
-    static std::vector<GameObject*> all_objects;
 
 };
 

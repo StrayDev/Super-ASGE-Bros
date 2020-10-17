@@ -17,6 +17,8 @@ private:
     void createMenuText(ASGE::Renderer* renderer);
 
     GameObject* selection_icon = nullptr;
+
+    void createSelectionIcon();
 };
 
 

@@ -5,21 +5,11 @@
 #include "menu.h"
 #include "playing.h"
 
+
 Menu::~Menu()
 {
-    Logging::log("Menu Destructor\n");
-    //GameObject::destroyAllObjects();
-    GameObject::destroyNonPersistentObjects();
-
-    Logging::log("objects destroyed\n");
-
-    std::string a = GameObject::getAllObjects().empty() ? "true\n" : "false\n";
-    Logging::log("Object Array Empty : " + a );
-    std::string b = RenderComponent::getRenderComponents().empty() ? "true\n" : "false\n";
-    Logging::log("Render Array Empty : " + b );
-    std::string c = Component::getAllComponents().empty() ? "true\n" : "false\n";
-    Logging::log("Component Array Empty : " + c );
-
+    GameObject::destroyAllObjects();
+    Logging::log("All Objects : DESTROYED\n");
     Logging::log("GameState : MENU DESTROYED\n");
 }
 
@@ -28,6 +18,7 @@ void Menu::init(ASGE::Renderer* renderer)
     FileSystem::loadLevel("menu", renderer);
     BlockFactory::createTitleCard();
     createMenuText(renderer);
+    createSelectionIcon();
     Logging::log("GameState : MENU INIT\n");
 }
 
@@ -35,7 +26,6 @@ void Menu::update(float delta_time)
 {
     if (_game->input()->enter() == 0) return;
     _game->setState(new Playing(_game));
-
 }
 
 void Menu::createMenuText(ASGE::Renderer* renderer)
@@ -44,6 +34,7 @@ void Menu::createMenuText(ASGE::Renderer* renderer)
     Vector2 position;
     auto screen_width = ASGE::SETTINGS.window_width;
     auto screen_height = ASGE::SETTINGS.window_height;
+    auto colour = ASGE::COLOURS::WHITE;
 
     for (int i = 0; i < 4; i++)
     {
@@ -53,25 +44,28 @@ void Menu::createMenuText(ASGE::Renderer* renderer)
             {
                 string = "C1985 NINTENDO";
                 position = Vector2(screen_width/2 + 290, screen_height - screen_height/2.5);
-
+                colour = ASGE::COLOURS::BISQUE;
                 break;
             }
             case 1:
             {
                 string = "1 PLAYER GAME";
                 position = Vector2(screen_width/2, screen_height - screen_height/3.3);
+                colour = ASGE::COLOURS::WHITE;
                 break;
             }
             case 2:
             {
                 string = "2 PLAYER GAME";
                 position = Vector2(screen_width/2, screen_height - screen_height/4.4);
+                colour = ASGE::COLOURS::WHITE;
                 break;
             }
             case 3:
             {
                 string = "TOP- 000000"; // will need to get score
                 position = Vector2(screen_width/2, screen_height - screen_height/6.5);
+                colour = ASGE::COLOURS::WHITE;
                 break;
             }
         }
@@ -79,10 +73,21 @@ void Menu::createMenuText(ASGE::Renderer* renderer)
         auto obj = new GameObject();
         auto ren = new TextRenderer();
         obj->addComponent(ren);
-        ren->createText(renderer, string, .91f);
+        ren->createText(renderer, string, .91f, colour);
+
         position = Vector2(position.x() - ren->getWidthOffset(), position.y());
         obj->getComponent<Transform*>()->setPosition(position);
     }
+}
+
+void Menu::createSelectionIcon()
+{
+    auto object = new GameObject();
+    auto render_comp = new SpriteRenderer();
+    object->addComponent(render_comp);
+    //render_comp->createSprite();
+
+
 }
 
 
