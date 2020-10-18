@@ -6,10 +6,14 @@
 
 std::vector<Component*> Component::all_components;
 
+Component::Component()
+{
+    all_components.push_back(this);
+}
+
 Component::~Component()
 {
-    auto id = std::find(all_components.begin(), all_components.end(), this);
-    all_components.erase(id);
+    all_components.erase(std::remove(all_components.begin(), all_components.end(), this), all_components.end());
 }
 
 void Component::init(GameObject* _gameobject)
@@ -17,5 +21,6 @@ void Component::init(GameObject* _gameobject)
     gameobject = _gameobject;
     all_components.push_back(this);
 }
+
 
 

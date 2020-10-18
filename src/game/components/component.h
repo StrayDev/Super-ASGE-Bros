@@ -6,7 +6,7 @@
 class Component
 {
 public:
-    Component() = default;
+    Component();
     virtual ~Component();
 
     virtual void init(GameObject* _gameobject);

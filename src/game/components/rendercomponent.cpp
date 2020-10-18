@@ -1,5 +1,6 @@
 #include <algorithm>
 #include <Engine/Logger.hpp>
+#include <vector>
 #include "rendercomponent.h"
 
 std::vector<RenderComponent*> RenderComponent::render_components;
@@ -12,6 +13,5 @@ void RenderComponent::init(GameObject *_gameobject)
 
 RenderComponent::~RenderComponent()
 {
-    auto id = std::find(render_components.begin(), render_components.end(), this);
-    render_components.erase(id);
+    render_components.erase(std::remove(render_components.begin(), render_components.end(), this), render_components.end());
 }

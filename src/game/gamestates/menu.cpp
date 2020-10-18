@@ -2,19 +2,23 @@
 #include <game/core/filesystem.h>
 #include <Engine/Logger.hpp>
 #include <game/components/textrenderer.h>
+#include <game/factories/userinterface.h>
+#include <game/components/persistence.h>
 #include "menu.h"
 #include "playing.h"
 
 
 Menu::~Menu()
 {
-    GameObject::destroyAllObjects();
+    //GameObject::destroyAllObjects();
+    GameObject::destroyNonPersistentObjects();
     Logging::log("All Objects : DESTROYED\n");
     Logging::log("GameState : MENU DESTROYED\n");
 }
 
 void Menu::init(ASGE::Renderer* renderer)
 {
+    UserInterface::createUserInterface(renderer);
     FileSystem::loadLevel("menu", renderer);
     BlockFactory::createTitleCard();
     createMenuText(renderer);
@@ -73,6 +77,7 @@ void Menu::createMenuText(ASGE::Renderer* renderer)
         auto obj = new GameObject();
         auto ren = new TextRenderer();
         obj->addComponent(ren);
+        obj->addComponent(new Persistence());
         ren->createText(renderer, string, .91f, colour);
 
         position = Vector2(position.x() - ren->getWidthOffset(), position.y());

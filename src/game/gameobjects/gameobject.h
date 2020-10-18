@@ -37,6 +37,7 @@ protected:
     std::vector<Component*> components;
 
 
+    static bool sortByPersistence(GameObject* obj1, GameObject* obj2);
 };
 
 
