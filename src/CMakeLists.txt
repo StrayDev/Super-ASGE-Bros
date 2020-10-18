@@ -32,7 +32,7 @@ add_executable(
         game/levels/leveldata.h
         game/math/vector2.cpp
         game/math/vector2.h
-        game/components/transform.cpp game/components/transform.h game/core/gamedata.cpp game/core/gamedata.h game/components/RenderComponent.cpp game/components/RenderComponent.h game/components/spriterenderer.cpp game/components/spriterenderer.h game/core/filesystem.cpp game/core/filesystem.h game/levels/cell.cpp game/levels/cell.h game/factories/factory.cpp game/factories/factory.h game/factories/blockfactory.cpp game/factories/blockfactory.h game/components/textrenderer.cpp game/components/textrenderer.h game/components/persistence.cpp game/components/persistence.h game/factories/userinterface.cpp game/factories/userinterface.h)
+        game/components/transform.cpp game/components/transform.h game/core/gamedata.cpp game/core/gamedata.h game/components/RenderComponent.cpp game/components/RenderComponent.h game/components/spriterenderer.cpp game/components/spriterenderer.h game/core/filesystem.cpp game/core/filesystem.h game/levels/cell.cpp game/levels/cell.h game/factories/factory.cpp game/factories/factory.h game/factories/blockfactory.cpp game/factories/blockfactory.h game/components/textrenderer.cpp game/components/textrenderer.h game/components/persistence.cpp game/components/persistence.h game/factories/userinterface.cpp game/factories/userinterface.h game/factories/menuobjectfactory.cpp game/factories/menuobjectfactory.h)
 
 ## configure the target ##
 configure_target(${GAME} ${CMAKE_CURRENT_SOURCE_DIR} "${HEADER_LIST}")

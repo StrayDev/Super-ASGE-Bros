@@ -1,6 +1,7 @@
 #include "startup.h"
 #include "menu.h"
 #include <Engine/Logger.hpp>
+#include <game/factories/userinterface.h>
 
 ASGE::Renderer* Factory::renderer;
 
@@ -9,10 +10,13 @@ void StartUp::init(ASGE::Renderer *renderer)
     renderer->setClearColour(ASGE::COLOURS::LIGHTBLUE);
     //renderer->setWindowedMode(ASGE::GameSettings::WindowMode::BORDERLESS_FULLSCREEN);
 
+    initCamera();
+
     TextRenderer::loadFont(renderer);
     Factory::setRendererPtr(renderer); // not sure if this is frowned upon
 
-    initCamera();
+    UserInterface::createUserInterface(renderer);
+
     _game->setState(new Menu(_game));
 }
 

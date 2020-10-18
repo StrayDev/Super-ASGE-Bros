@@ -14,11 +14,8 @@ public:
     void update(float delta_time) override;
 
 private:
-    void createMenuText(ASGE::Renderer* renderer);
 
-    GameObject* selection_icon = nullptr;
 
-    void createSelectionIcon();
 };
 
 

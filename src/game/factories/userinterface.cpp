@@ -1,6 +1,7 @@
 #include <game/gameobjects/gameobject.h>
 #include <game/components/textrenderer.h>
 #include <game/components/transform.h>
+#include <game/components/persistence.h>
 #include "userinterface.h"
 
 GameObject* UserInterface::score;
@@ -22,6 +23,7 @@ void UserInterface::createUserInterface(ASGE::Renderer *renderer)
 {
     createScoreDisplay(renderer);
     createCoinDisplay(renderer);
+    createCoinSprite(renderer);
 
     /// world 1-1
 
@@ -33,6 +35,7 @@ void UserInterface::createCoinDisplay(ASGE::Renderer *renderer)
     coins = new GameObject();
     auto text = new TextRenderer();
     coins->addComponent(text);
+    coins->addComponent(new Persistence());
 
     std::string zeros;
     if (data.score < 10) zeros = "0";
@@ -46,6 +49,7 @@ void UserInterface::createScoreDisplay(ASGE::Renderer* renderer)
     score = new GameObject();
     auto text = new TextRenderer();
     score->addComponent(text);
+    score->addComponent(new Persistence());
 
     std::string zeros = "";
     if (data.score < 10)
@@ -71,6 +75,11 @@ void UserInterface::createScoreDisplay(ASGE::Renderer* renderer)
 
     text->createText(renderer, "MARIO\n" + zeros + std::to_string(data.score), .91f );
     score->getComponent<Transform*>()->setPosition( ASGE::SETTINGS.window_width/128,ASGE::SETTINGS.window_height/26 );
+}
+
+void UserInterface::createCoinSprite(ASGE::Renderer* renderer)
+{
+
 }
 
 

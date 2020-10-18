@@ -20,8 +20,8 @@ private:
     static GameData data;
 
     static void createScoreDisplay(ASGE::Renderer *renderer);
-
     static void createCoinDisplay(ASGE::Renderer *renderer);
+    static void createCoinSprite(ASGE::Renderer *renderer);
 };
 
 

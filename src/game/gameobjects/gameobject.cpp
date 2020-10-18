@@ -55,8 +55,8 @@ void GameObject::destroyNonPersistentObjects()
 
 bool GameObject::sortByPersistence(GameObject *obj1, GameObject *obj2)
 {
-    auto first = obj1->getComponent<Persistence*>() ? true : false;
-    auto second = obj2->getComponent<Persistence*>() ? true : false;
+    auto first = obj1->getComponent<Persistence *>() != nullptr;
+    auto second = obj2->getComponent<Persistence *>() != nullptr;
 
     if (first && !second)
     {
